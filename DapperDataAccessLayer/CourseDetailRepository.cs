@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 namespace DapperDataAccessLayer
 {
    
-        public interface CourseDetailsRepository : ICourseDetailsRepository
+        public class CourseDetailsRepository : ICourseDetailsRepository
         {
             public CourseDetails InsertSP(CourseDetails CourseDt)
             {
@@ -17,7 +17,7 @@ namespace DapperDataAccessLayer
                     var connectionString = " Data source=DESKTOP-BLBGEHJ\\SQLEXPRESS;initial catalog=batch7;user id=sa;password=Anaiyaan@123;";
                     var con = new SqlConnection(connectionString);
                     con.Open();
-                    var insertQuery = $"exec CourseDetailInsert '{CourseDt.CourseName}','{CourseDt.Duration}','{CourseDt.StartDate}',{CourseDt.NumberOfStudents},'{CourseDt.ContactPerson}'";
+                    var insertQuery = $"exec CourseDetailInsert '{CourseDt.CourseName}','{CourseDt.Duration}', '{CourseDt.StartDate}',{CourseDt.NumberOfStudents},'{CourseDt.ContactPerson}'";
                     con.Execute(insertQuery);
                     con.Close();
 

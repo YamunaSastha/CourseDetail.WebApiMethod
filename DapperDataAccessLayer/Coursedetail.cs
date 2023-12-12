@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace DapperDataAccessLayer
-{
+{ 
     public class CourseDetails
     {
         public long ID { get; set; }
